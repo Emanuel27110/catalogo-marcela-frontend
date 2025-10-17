@@ -17,6 +17,7 @@ const Categorias = () => {
   const [cargando, setCargando] = useState(true);
   const [mostrarModal, setMostrarModal] = useState(false);
   const [editando, setEditando] = useState(null);
+  const [categoriaAEliminar, setCategoriaAEliminar] = useState(null);
   
   // Formulario
   const [nombre, setNombre] = useState('');
@@ -93,14 +94,23 @@ const Categorias = () => {
     }
   };
 
-  const handleEliminar = async (id, nombre) => {
-    if (window.confirm(`¿Estás segura de eliminar la categoría "${nombre}"?`)) {
-      try {
-        await eliminarCategoria(id);
-        await cargarCategorias();
-      } catch (error) {
-        alert('Error al eliminar categoría: ' + (error.response?.data?.mensaje || 'Error desconocido'));
-      }
+  const abrirConfirmacionEliminar = (categoria) => {
+    setCategoriaAEliminar(categoria);
+  };
+
+  const cerrarConfirmacionEliminar = () => {
+    setCategoriaAEliminar(null);
+  };
+
+  const confirmarEliminar = async () => {
+    if (!categoriaAEliminar) return;
+    
+    try {
+      await eliminarCategoria(categoriaAEliminar._id);
+      await cargarCategorias();
+      cerrarConfirmacionEliminar();
+    } catch (error) {
+      alert('Error al eliminar categoría: ' + (error.response?.data?.mensaje || 'Error desconocido'));
     }
   };
 
@@ -174,7 +184,7 @@ const Categorias = () => {
                     ✏️ Editar
                   </button>
                   <button 
-                    onClick={() => handleEliminar(categoria._id, categoria.nombre)}
+                    onClick={() => abrirConfirmacionEliminar(categoria)}
                     className="btn-delete"
                   >
                     🗑️ Eliminar
@@ -186,7 +196,7 @@ const Categorias = () => {
         )}
       </main>
 
-      {/* Modal */}
+      {/* Modal de Crear/Editar */}
       {mostrarModal && (
         <div className="modal-overlay" onClick={cerrarModal}>
           <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -235,6 +245,27 @@ const Categorias = () => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de Confirmación de Eliminación */}
+      {categoriaAEliminar && (
+        <div className="modal-overlay" onClick={cerrarConfirmacionEliminar}>
+          <div className="modal-content modal-confirmar" onClick={(e) => e.stopPropagation()}>
+            <h2>⚠️ Confirmar Eliminación</h2>
+            <p>¿Estás segura de eliminar la categoría:</p>
+            <p className="categoria-eliminar-nombre">"{categoriaAEliminar.nombre}"?</p>
+            <p className="advertencia-text">Esta acción no se puede deshacer y eliminará todos los productos asociados.</p>
+            
+            <div className="modal-actions">
+              <button onClick={cerrarConfirmacionEliminar} className="btn-cancel">
+                Cancelar
+              </button>
+              <button onClick={confirmarEliminar} className="btn-delete-confirm">
+                Sí, Eliminar
+              </button>
+            </div>
           </div>
         </div>
       )}

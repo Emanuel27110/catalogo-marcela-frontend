@@ -351,3 +351,51 @@
     flex-direction: column;
   }
 }
+/* Modal de confirmación */
+.modal-confirmar {
+  max-width: 450px;
+  text-align: center;
+}
+
+.categoria-eliminar-nombre {
+  font-weight: 700;
+  color: #111827;
+  font-size: 18px;
+  margin: 15px 0;
+}
+
+.advertencia-text {
+  color: #dc2626;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.btn-delete-confirm {
+  flex: 1;
+  background: #dc2626;
+  color: white;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn-delete-confirm:hover {
+  background: #b91c1c;
+}
+
+.btn-delete-confirm:active {
+  transform: scale(0.98);
+}
+
+/* Responsive adicional */
+@media (max-width: 768px) {
+  .modal-confirmar {
+    max-width: 100%;
+    padding: 25px 20px;
+  }
+}
