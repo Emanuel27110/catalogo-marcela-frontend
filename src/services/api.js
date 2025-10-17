@@ -1,7 +1,12 @@
 import axios from 'axios';
 
-// URL base del backend
-const API_URL = 'http://localhost:5000/api';
+// URL base del backend - detecta automáticamente si es local o producción
+const isDevelopment = window.location.hostname === 'localhost';
+const API_URL = isDevelopment 
+  ? 'http://localhost:5000/api'
+  : 'https://catalogo-marcela-backend.onrender.com/api';
+
+console.log('🔗 Conectando a:', API_URL); // Para debug
 
 // Crear instancia de axios
 const api = axios.create({
