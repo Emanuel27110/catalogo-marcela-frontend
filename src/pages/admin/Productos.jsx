@@ -22,6 +22,7 @@ const Productos = () => {
   const [mostrarModal, setMostrarModal] = useState(false);
   const [editando, setEditando] = useState(null);
   const [subiendoImagen, setSubiendoImagen] = useState(false);
+  const [productoAEliminar, setProductoAEliminar] = useState(null);
   
   // Formulario
   const [nombre, setNombre] = useState('');
@@ -155,14 +156,23 @@ const Productos = () => {
     }
   };
 
-  const handleEliminar = async (id, nombre) => {
-    if (window.confirm(`¿Estás segura de eliminar el producto "${nombre}"?`)) {
-      try {
-        await eliminarProducto(id);
-        await cargarDatos();
-      } catch (error) {
-        alert('Error al eliminar producto: ' + (error.response?.data?.mensaje || 'Error desconocido'));
-      }
+  const abrirConfirmacionEliminar = (producto) => {
+    setProductoAEliminar(producto);
+  };
+
+  const cerrarConfirmacionEliminar = () => {
+    setProductoAEliminar(null);
+  };
+
+  const confirmarEliminar = async () => {
+    if (!productoAEliminar) return;
+    
+    try {
+      await eliminarProducto(productoAEliminar._id);
+      await cargarDatos();
+      cerrarConfirmacionEliminar();
+    } catch (error) {
+      alert('Error al eliminar producto: ' + (error.response?.data?.mensaje || 'Error desconocido'));
     }
   };
 
@@ -243,7 +253,7 @@ const Productos = () => {
                 <div className="producto-imagen-admin">
                   {producto.imagen ? (
                     <img 
-                      src={`http://localhost:5000${producto.imagen}`} 
+                      src={`https://catalogo-marcela-backend.onrender.com${producto.imagen}`} 
                       alt={producto.nombre}
                       onError={(e) => {
                         e.target.src = 'https://via.placeholder.com/200?text=Sin+Imagen';
@@ -284,7 +294,7 @@ const Productos = () => {
                     ✏️ Editar
                   </button>
                   <button 
-                    onClick={() => handleEliminar(producto._id, producto.nombre)}
+                    onClick={() => abrirConfirmacionEliminar(producto)}
                     className="btn-delete"
                   >
                     🗑️ Eliminar
@@ -296,7 +306,7 @@ const Productos = () => {
         )}
       </main>
 
-      {/* Modal */}
+      {/* Modal de Crear/Editar */}
       {mostrarModal && (
         <div className="modal-overlay" onClick={cerrarModal}>
           <div className="modal-content modal-producto" onClick={(e) => e.stopPropagation()}>
@@ -372,7 +382,7 @@ const Productos = () => {
                 {subiendoImagen && <small>Subiendo imagen...</small>}
                 {imagen && !subiendoImagen && (
                   <div className="imagen-preview">
-                    <img src={`http://localhost:5000${imagen}`} alt="Preview" />
+                    <img src={`https://catalogo-marcela-backend.onrender.com${imagen}`} alt="Preview" />
                   </div>
                 )}
               </div>
@@ -397,6 +407,27 @@ const Productos = () => {
                 </button>
               </div>
             </form>
+          </div>
+        </div>
+      )}
+
+      {/* Modal de Confirmación de Eliminación */}
+      {productoAEliminar && (
+        <div className="modal-overlay" onClick={cerrarConfirmacionEliminar}>
+          <div className="modal-content modal-confirmar" onClick={(e) => e.stopPropagation()}>
+            <h2>⚠️ Confirmar Eliminación</h2>
+            <p>¿Estás segura de eliminar el producto:</p>
+            <p className="producto-eliminar-nombre">"{productoAEliminar.nombre}"?</p>
+            <p className="advertencia-text">Esta acción no se puede deshacer.</p>
+            
+            <div className="modal-actions">
+              <button onClick={cerrarConfirmacionEliminar} className="btn-cancel">
+                Cancelar
+              </button>
+              <button onClick={confirmarEliminar} className="btn-delete-confirm">
+                Sí, Eliminar
+              </button>
+            </div>
           </div>
         </div>
       )}
