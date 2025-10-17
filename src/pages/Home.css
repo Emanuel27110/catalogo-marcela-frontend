@@ -1,0 +1,146 @@
+.home-container {
+  min-height: 100vh;
+  background: #f9fafb;
+  padding: 20px;
+}
+
+.home-header {
+  text-align: center;
+  margin-bottom: 40px;
+  padding: 30px 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.home-header h1 {
+  font-size: 32px;
+  color: #111827;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.home-header p {
+  font-size: 18px;
+  color: #6b7280;
+  margin: 0 0 20px 0;
+}
+
+.btn-admin-access {
+  background: #6366f1;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+}
+
+.btn-admin-access:hover {
+  background: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+}
+
+.btn-admin-access:active {
+  transform: translateY(0);
+}
+
+.categorias-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.categoria-card {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.categoria-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+}
+
+.categoria-card:active {
+  transform: translateY(-2px);
+}
+
+.categoria-icono {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.categoria-card h2 {
+  font-size: 24px;
+  color: #111827;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.categoria-card p {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+}
+
+.loading,
+.error,
+.sin-categorias {
+  text-align: center;
+  padding: 60px 20px;
+  font-size: 18px;
+  color: #6b7280;
+}
+
+.error {
+  color: #dc2626;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  .home-container {
+    padding: 15px;
+  }
+
+  .home-header {
+    padding: 20px 15px;
+    margin-bottom: 30px;
+  }
+
+  .home-header h1 {
+    font-size: 28px;
+  }
+
+  .home-header p {
+    font-size: 16px;
+  }
+
+  .btn-admin-access {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .categorias-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .categoria-card {
+    padding: 25px;
+  }
+
+  .categoria-card h2 {
+    font-size: 22px;
+  }
+}
