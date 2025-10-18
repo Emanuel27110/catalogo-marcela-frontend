@@ -85,7 +85,7 @@ const Categoria = () => {
               <div className="producto-imagen">
                 {producto.imagen ? (
                   <img 
-                    src={`http://localhost:5000${producto.imagen}`} 
+                    src={producto.imagen}
                     alt={producto.nombre}
                     onError={(e) => {
                       e.target.src = 'https://via.placeholder.com/300x300?text=Sin+Imagen';

@@ -253,7 +253,7 @@ const Productos = () => {
                 <div className="producto-imagen-admin">
                   {producto.imagen ? (
                     <img 
-                      src={`https://catalogo-marcela-backend.onrender.com${producto.imagen}`} 
+                      src={producto.imagen}
                       alt={producto.nombre}
                       onError={(e) => {
                         e.target.src = 'https://via.placeholder.com/200?text=Sin+Imagen';
@@ -382,7 +382,7 @@ const Productos = () => {
                 {subiendoImagen && <small>Subiendo imagen...</small>}
                 {imagen && !subiendoImagen && (
                   <div className="imagen-preview">
-                    <img src={`https://catalogo-marcela-backend.onrender.com${imagen}`} alt="Preview" />
+                    <img src={imagen} alt="Preview" />
                   </div>
                 )}
               </div>
