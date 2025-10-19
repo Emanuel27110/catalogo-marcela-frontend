@@ -48,8 +48,8 @@ const Home = () => {
   return (
     <div className="home-container">
       <header className="home-header">
-        <h1>Catálogo Marcela</h1>
-        <p>Seleccioná una categoría para ver los productos</p>
+        <h1>✨ Jazmin joyas y algo mas...</h1>
+        <p className="frase-header">Todo el año junto a vos</p>
         <button 
           onClick={() => navigate('/login')} 
           className="btn-admin-access"
@@ -70,7 +70,7 @@ const Home = () => {
               className="categoria-card"
               onClick={() => irACategoria(categoria._id)}
             >
-              <div className="categoria-icono">📦</div>
+              <div className="categoria-icono">💎</div>
               <h2>{categoria.nombre}</h2>
               {categoria.descripcion && (
                 <p>{categoria.descripcion}</p>

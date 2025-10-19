@@ -1,48 +1,52 @@
 .home-container {
   min-height: 100vh;
-  background: #f9fafb;
+  background: #FFFEF9;
   padding: 20px;
 }
 
 .home-header {
   text-align: center;
   margin-bottom: 40px;
-  padding: 30px 20px;
-  background: white;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #FFFFFF 0%, #FFF8F0 100%);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.15);
+  border: 2px solid #F5D5E0;
 }
 
 .home-header h1 {
   font-size: 32px;
-  color: #111827;
-  margin-bottom: 10px;
+  color: #D4AF37;
+  margin-bottom: 12px;
   font-weight: 700;
+  text-shadow: 0 2px 4px rgba(212, 175, 55, 0.1);
 }
 
-.home-header p {
+.frase-header {
   font-size: 18px;
-  color: #6b7280;
-  margin: 0 0 20px 0;
+  color: #9B7EBD;
+  margin: 0 0 24px 0;
+  font-style: italic;
+  font-weight: 500;
 }
 
 .btn-admin-access {
-  background: #6366f1;
+  background: linear-gradient(135deg, #D4AF37 0%, #C9A961 100%);
   color: white;
   border: none;
   padding: 12px 24px;
   font-size: 16px;
   font-weight: 600;
-  border-radius: 8px;
+  border-radius: 25px;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
 }
 
 .btn-admin-access:hover {
-  background: #4f46e5;
+  background: linear-gradient(135deg, #C9A961 0%, #B8984E 100%);
   transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4);
 }
 
 .btn-admin-access:active {
@@ -52,39 +56,42 @@
 .categorias-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 20px;
+  gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
 .categoria-card {
   background: white;
-  border-radius: 12px;
-  padding: 30px;
+  border-radius: 16px;
+  padding: 35px;
   text-align: center;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.1);
+  border: 2px solid transparent;
 }
 
 .categoria-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(212, 175, 55, 0.25);
+  border-color: #F5D5E0;
 }
 
 .categoria-card:active {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 }
 
 .categoria-icono {
-  font-size: 48px;
-  margin-bottom: 15px;
+  font-size: 52px;
+  margin-bottom: 18px;
+  filter: drop-shadow(0 2px 4px rgba(212, 175, 55, 0.2));
 }
 
 .categoria-card h2 {
   font-size: 24px;
-  color: #111827;
-  margin-bottom: 10px;
+  color: #D4AF37;
+  margin-bottom: 12px;
   font-weight: 600;
 }
 
@@ -100,7 +107,7 @@
   text-align: center;
   padding: 60px 20px;
   font-size: 18px;
-  color: #6b7280;
+  color: #9B7EBD;
 }
 
 .error {
@@ -114,15 +121,15 @@
   }
 
   .home-header {
-    padding: 20px 15px;
+    padding: 30px 20px;
     margin-bottom: 30px;
   }
 
   .home-header h1 {
-    font-size: 28px;
+    font-size: 26px;
   }
 
-  .home-header p {
+  .frase-header {
     font-size: 16px;
   }
 
@@ -133,11 +140,11 @@
 
   .categorias-grid {
     grid-template-columns: 1fr;
-    gap: 15px;
+    gap: 18px;
   }
 
   .categoria-card {
-    padding: 25px;
+    padding: 28px;
   }
 
   .categoria-card h2 {
