@@ -154,9 +154,13 @@
 /* Logo en header */
 .logo-home {
   max-width: 200px;
-  height: auto;
+  height: 200px;
+  object-fit: cover;
+  object-position: center 30%;
+  border-radius: 50%;
   margin-bottom: 15px;
   filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));
+  border: 3px solid #F5D5E0;
 }
 
 /* Footer con más contraste */
@@ -183,7 +187,9 @@
 
 .footer-logo img {
   max-width: 150px;
-  height: auto;
+  height: 150px;
+  object-fit: cover;
+  object-position: center 30%;
   filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
   background: white;
   padding: 15px;

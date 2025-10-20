@@ -259,7 +259,9 @@
 
 .footer-logo img {
   max-width: 150px;
-  height: auto;
+  height: 150px;
+  object-fit: cover;
+  object-position: center 30%;
   filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
   background: white;
   padding: 15px;
