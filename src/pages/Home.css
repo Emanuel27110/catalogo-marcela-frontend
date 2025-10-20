@@ -114,53 +114,18 @@
   color: #dc2626;
 }
 
-/* Responsive para móviles */
-@media (max-width: 768px) {
-  .home-container {
-    padding: 15px;
-  }
-
-  .home-header {
-    padding: 30px 20px;
-    margin-bottom: 30px;
-  }
-
-  .home-header h1 {
-    font-size: 26px;
-  }
-
-  .frase-header {
-    font-size: 16px;
-  }
-
-  .btn-admin-access {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .categorias-grid {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-
-  .categoria-card {
-    padding: 28px;
-  }
-
-  .categoria-card h2 {
-    font-size: 22px;
-  }
-}
-/* Logo en header */
+/* Logo en header - CORREGIDO */
 .logo-home {
-  max-width: 200px;
+  width: 200px;
   height: 200px;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center center;
   border-radius: 50%;
-  margin-bottom: 15px;
+  margin: 0 auto 15px;
+  display: block;
   filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));
   border: 3px solid #F5D5E0;
+  aspect-ratio: 1 / 1;
 }
 
 /* Footer con más contraste */
@@ -186,14 +151,17 @@
 }
 
 .footer-logo img {
-  max-width: 150px;
+  width: 150px;
   height: 150px;
   object-fit: cover;
-  object-position: center 30%;
+  object-position: center center;
   filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
   background: white;
   padding: 15px;
   border-radius: 50%;
+  aspect-ratio: 1 / 1;
+  display: block;
+  margin: 0 auto;
 }
 
 .footer-info {
@@ -260,10 +228,46 @@
   opacity: 0.9;
 }
 
-/* Responsive footer */
+/* Responsive para móviles */
 @media (max-width: 768px) {
+  .home-container {
+    padding: 15px;
+  }
+
+  .home-header {
+    padding: 30px 20px;
+    margin-bottom: 30px;
+  }
+
+  .home-header h1 {
+    font-size: 26px;
+  }
+
+  .frase-header {
+    font-size: 16px;
+  }
+
+  .btn-admin-access {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .categorias-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .categoria-card {
+    padding: 28px;
+  }
+
+  .categoria-card h2 {
+    font-size: 22px;
+  }
+
   .logo-home {
-    max-width: 160px;
+    width: 160px;
+    height: 160px;
   }
 
   .footer {
@@ -277,7 +281,8 @@
   }
 
   .footer-logo img {
-    max-width: 120px;
+    width: 120px;
+    height: 120px;
     padding: 12px;
   }
 
