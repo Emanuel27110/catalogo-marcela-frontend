@@ -48,8 +48,8 @@ const Home = () => {
   return (
     <div className="home-container">
       <header className="home-header">
-        <h1>✨ Jazmin joyas y algo mas...</h1>
-        <p className="frase-header">Todo el año junto a vos</p>
+        <img src="/logo.jpg" alt="Jazmin Joyas" className="logo-home" />
+        <p className="frase-header">✨ Todo el año junto a vos ✨</p>
         <button 
           onClick={() => navigate('/login')} 
           className="btn-admin-access"
@@ -79,6 +79,38 @@ const Home = () => {
           ))}
         </div>
       )}
+
+      {/* Footer */}
+      <footer className="footer">
+        <div className="footer-content">
+          <div className="footer-logo">
+            <img src="/logo.jpg" alt="Jazmin Joyas" />
+          </div>
+          
+          <div className="footer-info">
+            <h3>Contacto</h3>
+            <div className="footer-links">
+              <a href="https://www.facebook.com/jazmin.joyas.7" target="_blank" rel="noopener noreferrer" className="footer-link">
+                📘 Facebook: jazmin joyas
+              </a>
+              <a href="https://www.instagram.com/jazminjoyasyalgomas/" target="_blank" rel="noopener noreferrer" className="footer-link">
+                📸 Instagram: jazmin joyas
+              </a>
+              <a href="https://wa.me/5493814748051" target="_blank" rel="noopener noreferrer" className="footer-link">
+                📱 WhatsApp: 3814 74-8051
+              </a>
+            </div>
+          </div>
+
+          <div className="footer-frase">
+            <p>✨ Todo el año junto a vos ✨</p>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <p>© 2025 Jazmin joyas y algo mas... - Todos los derechos reservados</p>
+        </div>
+      </footer>
     </div>
   );
 };

@@ -151,3 +151,144 @@
     font-size: 22px;
   }
 }
+/* Logo en header */
+.logo-home {
+  max-width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+  filter: drop-shadow(0 4px 12px rgba(212, 175, 55, 0.3));
+}
+
+/* Footer con más contraste */
+.footer {
+  background: linear-gradient(135deg, #F5D5E0 0%, #9B7EBD 100%);
+  border-top: 4px solid #D4AF37;
+  margin-top: 80px;
+  padding: 50px 20px 25px;
+  box-shadow: 0 -8px 24px rgba(212, 175, 55, 0.2);
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 35px;
+  margin-bottom: 35px;
+}
+
+.footer-logo {
+  text-align: center;
+}
+
+.footer-logo img {
+  max-width: 150px;
+  height: auto;
+  filter: drop-shadow(0 4px 8px rgba(255, 255, 255, 0.3));
+  background: white;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.footer-info {
+  text-align: center;
+}
+
+.footer-info h3 {
+  color: white;
+  font-size: 22px;
+  margin-bottom: 18px;
+  font-weight: 700;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  padding: 10px 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+}
+
+.footer-link:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateX(5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-frase {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-frase p {
+  color: white;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 600;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 25px;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-bottom p {
+  color: white;
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+  .logo-home {
+    max-width: 160px;
+  }
+
+  .footer {
+    padding: 40px 15px 20px;
+    margin-top: 60px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-logo img {
+    max-width: 120px;
+    padding: 12px;
+  }
+
+  .footer-info h3 {
+    font-size: 20px;
+  }
+
+  .footer-link {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .footer-frase p {
+    font-size: 18px;
+  }
+
+  .footer-bottom p {
+    font-size: 12px;
+  }
+}
