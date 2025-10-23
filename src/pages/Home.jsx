@@ -50,12 +50,6 @@ const Home = () => {
       <header className="home-header">
         <img src="/logo.jpg" alt="Jazmin Joyas" className="logo-home" />
         <p className="frase-header">✨ Todo el año junto a vos ✨</p>
-        <button 
-          onClick={() => navigate('/login')} 
-          className="btn-admin-access"
-        >
-          🔐 Acceso Admin
-        </button>
       </header>
 
       {categorias.length === 0 ? (
@@ -108,6 +102,12 @@ const Home = () => {
         </div>
 
         <div className="footer-bottom">
+          <button 
+            onClick={() => navigate('/login')} 
+            className="btn-admin-access footer-btn"
+          >
+            🔐 Acceso Admin
+          </button>
           <p>© 2025 Jazmin joyas y algo mas... - Todos los derechos reservados</p>
         </div>
       </footer>
